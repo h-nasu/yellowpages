@@ -110,7 +110,7 @@ function getCompanyDetail(businessId){
       var detailBuf = document.querySelectorAll('.typ-profile-left-detail tr');
       for(var i=0;i<detailBuf.length;i++){
         var tdBuf = detailBuf[i].querySelectorAll('td');
-        companyDetailBuf[tdBuf[0].innerText] = tdBuf[1].innerText.trim();
+        companyDetailBuf[tdBuf[0].innerText.trim().replace(':','')] = tdBuf[1].innerText.trim();
       }
       if(document.querySelector('.typ-profile-head-left-tab p')){
         companyDetailBuf.Service = document.querySelector('.typ-profile-head-left-tab p').innerText.trim();
